@@ -11,8 +11,6 @@ function getComputerChoice(){
     }
 }
 
-
-
 function playGame(humanChoice){
     function playRound(humanChoice, computerChoice){
         options = {"rock":1, "paper":2, "scissors":3};
@@ -41,22 +39,26 @@ function playGame(humanChoice){
     console.log("Computer score:", computerScore)
 }
 
-
 const rockButton = document.createElement("button");
 const paperButton = document.createElement("button");
 const scissorsButton = document.createElement("button");
-
 
 document.body.appendChild(rockButton);
 document.body.appendChild(paperButton);
 document.body.appendChild(scissorsButton);
 
-
-rockButton.addEventListener('click', playGame());
-paperButton.addEventListener('click', playGame());
-scissorsButton.addEventListener('click', playGame());
-
-
 rockButton.textContent = 'Rock';
 paperButton.textContent = 'Paper';
 scissorsButton.textContent = 'Scissors';
+
+rockButton.addEventListener('click', function(){
+    playGame("rock");
+});
+
+paperButton.addEventListener('click', function(){
+    playGame("paper");
+});
+
+scissorsButton.addEventListener('click', function(){
+    playGame("scissors");
+});
